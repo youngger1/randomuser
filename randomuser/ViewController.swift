@@ -11,6 +11,13 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var usersTabelView: UITableView!
     
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    
+    @IBOutlet weak var ivCheckBox1: UIImageView!
+    @IBOutlet weak var ivCheckBox2: UIImageView!
+    @IBOutlet weak var ivCheckBox3: UIImageView!
+    
+    var ArrayCheckBox : [UIImageView] = []
     
     var usersData : [UserDto] = [] {
         didSet {
@@ -47,27 +54,69 @@ class ViewController: UIViewController {
         usersTabelView.dataSource = self
         usersTabelView.register(UINib(nibName: "UserTableViewCell", bundle: nil), forCellReuseIdentifier: "UserTableViewCell")
         
+        ArrayCheckBox = [ivCheckBox1 , ivCheckBox2, ivCheckBox3]
         
     }
     
     func updateView() {
         print(#function)
         
+        showProgress()
         ApiController.shared.randomUser(gender: nil) { data in
             print("success : \(data)")
         
             DispatchQueue.main.async {
-                
+                self.hideProgress()
                     self.usersData = data.results
-                
-                
             }
             
         } onFailure: { error in
-            print("error : \(error)")
+            DispatchQueue.main.async {
+                self.hideProgress()
+                print("error : \(error)")
+            }
         }
 
     }
+    
+    func showProgress() {
+        
+        self.indicator.isHidden = false
+        self.indicator.startAnimating()
+        
+    }
+    
+    func hideProgress() {
+        
+        self.indicator.stopAnimating()
+        self.indicator.isHidden = true
+        
+    }
+    
+    func changeCheckBox(tag : Int) {
+        for checkBox in ArrayCheckBox {
+            if checkBox.tag == tag {
+                checkBox.image = UIImage(systemName: "checkmark.circle.fill")
+            } else {
+                checkBox.image = UIImage(systemName: "circle")
+            }
+        }
+        
+    }
+    
+    @IBAction func btnGenderPressed(_ sender: Any) {
+        
+        print(#function)
+        let tag = (sender as! UIButton).tag
+        print("tag : \(tag)")
+       
+        self.changeCheckBox(tag: tag)
+        
+        
+        
+        
+    }
+    
 
 
 }
