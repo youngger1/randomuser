@@ -9,6 +9,9 @@ import UIKit
 
 class UserTableViewCell: UITableViewCell {
 
+    
+    @IBOutlet weak var image_profile: UIImageView!
+    
     @IBOutlet weak var label_Name: UILabel!
     @IBOutlet weak var label_Gender: UILabel!
     @IBOutlet weak var label_Nat: UILabel!

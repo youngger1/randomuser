@@ -29,7 +29,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="tintColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="0ye-rA-c6Z"/>
                                     <constraint firstItem="mZo-Qx-IpU" firstAttribute="top" secondItem="V7J-2u-bmS" secondAttribute="top" id="6dC-fl-MoB"/>
@@ -130,6 +130,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="image_profile" destination="mZo-Qx-IpU" id="xWH-9d-kaB"/>
                 <outlet property="label_Gender" destination="bYh-me-Dl0" id="Akr-2Q-WcK"/>
                 <outlet property="label_Name" destination="eoN-G0-kxi" id="ls7-HY-Ybx"/>
                 <outlet property="label_Nat" destination="45z-QJ-Edt" id="TNP-0R-WBW"/>
@@ -143,9 +144,6 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

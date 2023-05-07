@@ -236,6 +236,14 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
         
         cell.label_Nat.text = "국가 : \(item.nat)"
         
+        if let thumbnail = item.picture?.thumbnail {
+            cell.image_profile.setProfileImageGET(urlString: thumbnail) { image in
+            }
+        } else {
+            cell.image_profile.image = UIImage(systemName: "person.circle.fill")
+        }
+        
+        
         return cell
         
     }

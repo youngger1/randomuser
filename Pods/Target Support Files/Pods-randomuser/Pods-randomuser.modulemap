@@ -1,0 +1,6 @@
+framework module Pods_randomuser {
+  umbrella header "Pods-randomuser-umbrella.h"
+
+  export *
+  module * { export * }
+}
