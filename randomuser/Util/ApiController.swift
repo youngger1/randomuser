@@ -10,6 +10,7 @@ import Foundation
 let TAG = "Black_K > "
 let NOT_REACHABLE_ERROR = ErrorDto(error: ">>> 에러 : 네트워크 상태를 확인해 주세요. <<< ")
 let JSON_PARSING_FAIL_ERROR = ErrorDto(error: ">>> 에러 : JSON PARSING 에러 <<< ")
+let SEVER_ADDRESS = "https://randomuser.me/api"
 
 class ApiController {
     
@@ -17,9 +18,20 @@ class ApiController {
     
     private init() {}
     
-    func randomUser(gender : String? ,reulsts onSuccess:@escaping(UsersDto) -> Void , onFailure:@escaping(ErrorDto)->Void) {
+    func randomUser(gender : String? ,page: Int, results: Int, onSuccess:@escaping(UsersDto) -> Void , onFailure:@escaping(ErrorDto)->Void) {
         
-        let url = URL(string: "https://randomuser.me/api/?results=10")
+        var urlString = SEVER_ADDRESS
+        if let gender = gender {
+            urlString = urlString + "/?gender=\(gender)&page=\(page)&results=\(results)"
+        } else {
+            urlString = urlString + "/?page=\(page)&results=\(results)"
+        }
+        
+        
+        
+        
+//        let url = URL(string: "\(SEVER_ADDRESS)/?seed=abc")
+        let url = URL(string: urlString)
         
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)

@@ -12,6 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfilePopup" customModule="randomuser" customModuleProvider="target">
             <connections>
+                <outlet property="label_Email" destination="V7r-vm-UEC" id="fqj-vr-ekD"/>
+                <outlet property="label_Gender" destination="f4X-Dv-G6X" id="sQk-KJ-IPF"/>
+                <outlet property="label_Name" destination="TAB-o1-w7D" id="W6U-wO-Ryj"/>
+                <outlet property="label_Nat" destination="h1p-hZ-nXO" id="xVm-J0-ntF"/>
+                <outlet property="label_Phone" destination="SJ0-uD-ZwI" id="Zyt-i8-QbV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -151,6 +156,11 @@
                         <constraint firstAttribute="trailing" secondItem="nD9-Iw-ZNu" secondAttribute="trailing" constant="10" id="nX3-Gf-Bse"/>
                         <constraint firstItem="hcp-Iv-rOD" firstAttribute="centerX" secondItem="LWW-iX-eqF" secondAttribute="centerX" id="oXn-z8-CRd"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -167,7 +177,7 @@
     <resources>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="Color.dim">
-            <color red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
