@@ -27,10 +27,6 @@ class ApiController {
             urlString = urlString + "/?page=\(page)&results=\(results)"
         }
         
-        
-        
-        
-//        let url = URL(string: "\(SEVER_ADDRESS)/?seed=abc")
         let url = URL(string: urlString)
         
         let config = URLSessionConfiguration.default

@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var ivCheckBox2: UIImageView!
     @IBOutlet weak var ivCheckBox3: UIImageView!
     
+    @IBOutlet weak var view_NoData: UIView!
+    
     var ArrayCheckBox : [UIImageView] = []
     var pageCount: Int = 0
     let resultsCount : Int = 10
@@ -29,17 +31,21 @@ class ViewController: UIViewController {
             DispatchQueue.main.async {
                 print("self.usersData.count : \(self.usersData.count)")
                 if self.usersData.count > 0 {
-
+                    
+                    self.view_NoData.isHidden = true
+                    
                     self.usersTabelView.reloadData()
                     
                     if self.pageCount == 0 {
                         self.usersTabelView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
                     }
-
+                    
                 } else {
                     print(TAG, "User 정보가 없습니다.")
+                    
+                    self.view_NoData.isHidden = false
                 }
-
+                
             }
         }
     }
@@ -84,18 +90,18 @@ class ViewController: UIViewController {
         print(#function , "page : \(page)")
         ApiController.shared.randomUser(gender: gender, page: page, results: results) { data in
             print("success : \(data)")
-        
+            
             DispatchQueue.main.async {
                 if isShowPrgoress {
                     self.hideProgress()
                 }
-                //
+                
                 var dummyData : [UserDto] = []
                 
                 for item in data.results {
                     
                     if !self.usersData.contains(where: { user in
-                     
+                        
                         if item.gender == user.gender && item.name.title == user.name.title && item.name.first == user.name.first && item.name.last == user.name.last && item.nat == user.nat {
                             
                             return true
@@ -115,15 +121,6 @@ class ViewController: UIViewController {
                     self.usersData.append(contentsOf: dummyData)
                 }
                 
-                
-                //
-                
-//                if page == 0 {
-//                    self.usersData = data.results
-//                } else {
-//                    self.usersData.append(contentsOf: data.results)
-//                }
-                
                 self.usersTabelView.refreshControl?.endRefreshing()
                 
                 self.infiniteScroll = false
@@ -138,7 +135,7 @@ class ViewController: UIViewController {
                 self.usersTabelView.refreshControl?.endRefreshing()
             }
         }
-
+        
         
         
     }
@@ -186,20 +183,20 @@ class ViewController: UIViewController {
         
     }
     
-   
+    
     
     @IBAction func btnGenderPressed(_ sender: Any) {
         
         print(#function)
         let tag = (sender as! UIButton).tag
         print("tag : \(tag)")
-       
+        
         self.pageCount = 0
         self.genderIndex = tag
         self.changeCheckBox(tag: tag)
         self.requestAPI(tag: tag, isShowProgress: true)
         
-    
+        
         
         
     }
@@ -210,8 +207,8 @@ class ViewController: UIViewController {
         self.requestAPI(tag: self.genderIndex, isShowProgress: false)
     }
     
-
-
+    
+    
 }
 
 extension ViewController : UITableViewDelegate, UITableViewDataSource {
@@ -220,7 +217,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
         
         return self.usersData.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell",for: indexPath) as! UserTableViewCell
@@ -247,7 +244,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
         return cell
         
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         print(#function , "indexpath.row : \(indexPath.row)")
@@ -265,42 +262,15 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         print(#function)
         
-//        let contentOffset = scrollView.contentOffset.y
-//        let contentSizeHeight = scrollView.contentSize.height
-//        let frameHeight = scrollView.frame.height
-//
-//        if contentOffset > contentSizeHeight - frameHeight
-//        {
-//            print(#function, "down")
-//            pageCount += 1
-//            requestAPI(tag: self.genderIndex, isShowProgress: true)
-//
-//        }
-        
-//        if scrollView == usersTabelView { return }
-//
-//        if ((scrollView.contentOffset.y+scrollView.frame.height) / scrollView.contentSize.height) > 0.9 {
-//            // 내릴때
-////            if isProgressing == false {
-////                isProgressing = true
-//
-//            pageCount += 1
-//            requestAPI(tag: self.genderIndex, isShowProgress: true)
-////            }
-//        }
-
-        
-        
         let contentOffset = scrollView.contentOffset.y
         let contentSizeHeight = scrollView.contentSize.height
         let frameHeight = scrollView.frame.height
         
         if contentOffset > contentSizeHeight - frameHeight
         {
-            
             if !infiniteScroll {
                 infiniteScroll = true
-                print(#function, "down")
+                print(TAG, #function, "down")
                 pageCount += 1
                 requestAPI(tag: self.genderIndex, isShowProgress: true)
                 
@@ -308,7 +278,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
         }
         
     }
-
-
+    
+    
 }
 

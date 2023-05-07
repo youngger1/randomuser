@@ -164,6 +164,31 @@
                                         <rect key="frame" x="0.0" y="98" width="414" height="716"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8AV-xM-vQd">
+                                        <rect key="frame" x="0.0" y="80" width="414" height="734"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doc" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="8AC-iQ-Kb5">
+                                                <rect key="frame" x="177" y="226.5" width="60" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="4kC-ln-cey"/>
+                                                    <constraint firstAttribute="height" constant="100" id="Wo9-9j-phI"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="데이터가 없습니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C4G-3z-Z1b">
+                                                <rect key="frame" x="125.5" y="331.5" width="163" height="26.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                                <color key="textColor" systemColor="systemBlueColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="C4G-3z-Z1b" firstAttribute="top" secondItem="8AC-iQ-Kb5" secondAttribute="bottom" constant="5" id="GAF-2L-7a8"/>
+                                            <constraint firstItem="8AC-iQ-Kb5" firstAttribute="centerX" secondItem="8AV-xM-vQd" secondAttribute="centerX" id="Jj5-H0-5DR"/>
+                                            <constraint firstItem="8AC-iQ-Kb5" firstAttribute="centerY" secondItem="8AV-xM-vQd" secondAttribute="centerY" multiplier="3:4" constant="1" id="W9k-wP-zke"/>
+                                            <constraint firstItem="C4G-3z-Z1b" firstAttribute="centerX" secondItem="8AV-xM-vQd" secondAttribute="centerX" id="raZ-1h-o7R"/>
+                                        </constraints>
+                                    </view>
                                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="xYI-iZ-Mh3">
                                         <rect key="frame" x="188.5" y="388.5" width="37" height="37"/>
                                         <color key="color" red="0.6705882353" green="0.67843137249999996" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -171,11 +196,15 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="8AV-xM-vQd" firstAttribute="leading" secondItem="A3j-S2-tFD" secondAttribute="leading" id="2TA-Dw-SSe"/>
                                     <constraint firstItem="qge-ZM-M5a" firstAttribute="top" secondItem="A3j-S2-tFD" secondAttribute="top" id="5r3-Ct-alI"/>
                                     <constraint firstItem="67h-Hq-3Xu" firstAttribute="leading" secondItem="A3j-S2-tFD" secondAttribute="leading" id="7fr-wr-Avs"/>
                                     <constraint firstItem="xYI-iZ-Mh3" firstAttribute="centerY" secondItem="A3j-S2-tFD" secondAttribute="centerY" id="Ddk-ce-fft"/>
+                                    <constraint firstAttribute="trailing" secondItem="8AV-xM-vQd" secondAttribute="trailing" id="NVy-xE-Tqu"/>
                                     <constraint firstAttribute="trailing" secondItem="qge-ZM-M5a" secondAttribute="trailing" id="PlY-qU-4WZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="8AV-xM-vQd" secondAttribute="bottom" id="bDP-5p-Z5a"/>
                                     <constraint firstItem="qge-ZM-M5a" firstAttribute="leading" secondItem="A3j-S2-tFD" secondAttribute="leading" id="bd4-Qu-FKB"/>
+                                    <constraint firstItem="8AV-xM-vQd" firstAttribute="top" secondItem="qge-ZM-M5a" secondAttribute="bottom" id="cTK-z9-26I"/>
                                     <constraint firstAttribute="trailing" secondItem="67h-Hq-3Xu" secondAttribute="trailing" id="h4I-T9-AZy"/>
                                     <constraint firstAttribute="bottom" secondItem="67h-Hq-3Xu" secondAttribute="bottom" id="qfF-6Y-kpT"/>
                                     <constraint firstItem="67h-Hq-3Xu" firstAttribute="top" secondItem="qge-ZM-M5a" secondAttribute="bottom" constant="18" id="qfp-yl-GIz"/>
@@ -198,6 +227,7 @@
                         <outlet property="ivCheckBox2" destination="S4R-3G-eQ9" id="Kzi-sL-7xq"/>
                         <outlet property="ivCheckBox3" destination="Xfy-PU-1bg" id="Rnz-HD-3Ak"/>
                         <outlet property="usersTabelView" destination="67h-Hq-3Xu" id="dFR-fi-455"/>
+                        <outlet property="view_NoData" destination="8AV-xM-vQd" id="VEb-YP-U6I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -208,6 +238,7 @@
     <resources>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
         <image name="circle" catalog="system" width="128" height="123"/>
+        <image name="doc" catalog="system" width="115" height="128"/>
         <namedColor name="Color(180,180,180)">
             <color red="0.70588235294117652" green="0.70588235294117652" blue="0.70588235294117652" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -216,6 +247,9 @@
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -8,7 +8,7 @@
 import UIKit
 
 class ProfilePopup: UIViewController {
-
+    
     var userData : UserDto?
     
     @IBOutlet weak var label_Name: UILabel!
@@ -24,19 +24,18 @@ class ProfilePopup: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         setupView()
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         updateView()
     }
-
-
+    
+    
     func setupView() {
         
         
@@ -75,7 +74,7 @@ class ProfilePopup: UIViewController {
         }
         
     }
-
+    
     @IBAction func btnClosePressed(_ sender: Any) {
         
         self.dismiss(animated: false)
