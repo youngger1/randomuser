@@ -12,7 +12,7 @@ extension UIImageView {
     
     
     func setProfileImageGET(urlString: String, completionHandler: ((UIImage?) -> Void)?) {
-        let processor = ResizingImageProcessor(referenceSize: CGSize(width: 50, height: 50)) |> RoundCornerImageProcessor(cornerRadius: 25)
+        let processor = ResizingImageProcessor(referenceSize: CGSize(width: 60, height: 60)) |> RoundCornerImageProcessor(cornerRadius: 30)
         let placeholder = UIImage(systemName: "person.circle.fill")
         
         if let encodedPath =

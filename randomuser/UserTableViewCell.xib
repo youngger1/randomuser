@@ -23,30 +23,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="99"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V7J-2u-bmS">
-                                <rect key="frame" x="18" y="24.5" width="50" height="50"/>
+                                <rect key="frame" x="18" y="19.5" width="60" height="60"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mZo-Qx-IpU">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="0ye-rA-c6Z"/>
+                                    <constraint firstAttribute="height" constant="60" id="0ye-rA-c6Z"/>
                                     <constraint firstItem="mZo-Qx-IpU" firstAttribute="top" secondItem="V7J-2u-bmS" secondAttribute="top" id="6dC-fl-MoB"/>
                                     <constraint firstItem="mZo-Qx-IpU" firstAttribute="leading" secondItem="V7J-2u-bmS" secondAttribute="leading" id="7Rg-ub-pCB"/>
-                                    <constraint firstAttribute="width" constant="50" id="OOa-K3-2js"/>
+                                    <constraint firstAttribute="width" constant="60" id="OOa-K3-2js"/>
                                     <constraint firstAttribute="bottom" secondItem="mZo-Qx-IpU" secondAttribute="bottom" id="eUz-ie-6bh"/>
                                     <constraint firstAttribute="trailing" secondItem="mZo-Qx-IpU" secondAttribute="trailing" id="rAU-d1-AIM"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="jBH-t2-ZqW">
-                                <rect key="frame" x="88" y="10" width="306" height="79"/>
+                                <rect key="frame" x="98" y="10" width="296" height="79"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qt9-MS-xli">
-                                        <rect key="frame" x="0.0" y="0.0" width="306" height="23"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="296" height="23"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoN-G0-kxi">
-                                                <rect key="frame" x="0.0" y="0.0" width="306" height="23"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="296" height="23"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -61,10 +61,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YEO-4z-S8U">
-                                        <rect key="frame" x="0.0" y="28" width="306" height="23"/>
+                                        <rect key="frame" x="0.0" y="28" width="296" height="23"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="성별" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYh-me-Dl0">
-                                                <rect key="frame" x="0.0" y="0.0" width="306" height="23"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="296" height="23"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -79,10 +79,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5FY-2w-bvO">
-                                        <rect key="frame" x="0.0" y="56" width="306" height="23"/>
+                                        <rect key="frame" x="0.0" y="56" width="296" height="23"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="국가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45z-QJ-Edt">
-                                                <rect key="frame" x="0.0" y="0.0" width="306" height="23"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="296" height="23"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>

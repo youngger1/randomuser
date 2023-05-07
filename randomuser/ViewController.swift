@@ -29,7 +29,6 @@ class ViewController: UIViewController {
     var usersData : [UserDto] = [] {
         didSet {
             DispatchQueue.main.async {
-                print("self.usersData.count : \(self.usersData.count)")
                 if self.usersData.count > 0 {
                     
                     self.view_NoData.isHidden = true
@@ -37,6 +36,7 @@ class ViewController: UIViewController {
                     self.usersTabelView.reloadData()
                     
                     if self.pageCount == 0 {
+                        // pageCount 0 일때 tableView 최상단으로 이동
                         self.usersTabelView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
                     }
                     
@@ -81,6 +81,13 @@ class ViewController: UIViewController {
         callAPI(gender: nil, page: pageCount, results: resultsCount, isShowPrgoress: true)
     }
     
+    /**
+        API 호출
+        gender : nil - 전체 / male - 남성 / female - 여성
+        page :  페이지 인덱스
+        results : 한 페이지 결과 노출 값 : 기본 10
+        isShowProgress : indicator 노출 여부
+     */
     func callAPI(gender: String? , page : Int, results : Int, isShowPrgoress : Bool){
         
         if isShowPrgoress {
@@ -102,6 +109,7 @@ class ViewController: UIViewController {
                     
                     if !self.usersData.contains(where: { user in
                         
+                        // 성별 , 이름, 국적 모두 같은 경우 동일 인물 처리
                         if item.gender == user.gender && item.name.title == user.name.title && item.name.first == user.name.first && item.name.last == user.name.last && item.nat == user.nat {
                             
                             return true
@@ -140,6 +148,7 @@ class ViewController: UIViewController {
         
     }
     
+    // indicator show & start
     func showProgress() {
         
         self.indicator.isHidden = false
@@ -147,6 +156,7 @@ class ViewController: UIViewController {
         
     }
     
+    // indicator hide & stop
     func hideProgress() {
         
         self.indicator.stopAnimating()
@@ -154,6 +164,7 @@ class ViewController: UIViewController {
         
     }
     
+    // 성별 체크박스 tag 값에 따른 이미지 변경
     func changeCheckBox(tag : Int) {
         for checkBox in ArrayCheckBox {
             if checkBox.tag == tag {
@@ -165,6 +176,9 @@ class ViewController: UIViewController {
         
     }
     
+    /**
+        성별 tag 값과 indicator  노출 여부에 따른 API 호출
+     */
     func requestAPI(tag : Int, isShowProgress : Bool) {
         
         
@@ -184,7 +198,7 @@ class ViewController: UIViewController {
     }
     
     
-    
+    // 성별 버튼 이벤트
     @IBAction func btnGenderPressed(_ sender: Any) {
         
         print(#function)
@@ -201,6 +215,7 @@ class ViewController: UIViewController {
         
     }
     
+    // pull 업데이트
     @objc func pullToUpdate(_ sneder: Any) {
         
         self.pageCount = 0
