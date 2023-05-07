@@ -49,6 +49,17 @@ class ApiController {
             print(TAG, "httpResponse.statusCode > \(httpResponse.statusCode)")
             
             if httpResponse.statusCode < 200 || httpResponse.statusCode >= 500 {
+                
+                do {
+                    let decoder = JSONDecoder()
+                    let result = try decoder.decode(ErrorDto.self, from: responseData)
+
+                    onFailure(ErrorDto(error: result.error))
+                    
+                } catch {
+                    onFailure(NOT_REACHABLE_ERROR)
+                }
+
                 return
             } else if httpResponse.statusCode == 200 {
                 do {
