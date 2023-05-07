@@ -17,6 +17,11 @@ class ProfilePopup: UIViewController {
     @IBOutlet weak var label_Email: UILabel!
     @IBOutlet weak var label_Phone: UILabel!
     
+    @IBOutlet weak var image_profile: UIImageView!
+    
+    @IBOutlet weak var view_Email: UIView!
+    @IBOutlet weak var view_Phone: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -51,13 +56,20 @@ class ProfilePopup: UIViewController {
             if let email = data.email {
                 label_Email.text = "이메일 : \(email)"
             } else {
-                
+                self.view_Email.isHidden = true
             }
             
             if let phone = data.phone {
                 label_Phone.text = "연락처 : \(phone)"
             } else {
-                
+                self.view_Phone.isHidden = true
+            }
+            
+            if let thumbnail = data.picture?.thumbnail {
+                self.image_profile.setProfileImageGET(urlString: thumbnail) { image in
+                }
+            } else {
+                self.image_profile.image = UIImage(systemName: "person.circle.fill")
             }
             
         }
