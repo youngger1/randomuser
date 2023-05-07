@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7B915F2720B83DAA4187D9ED /* Pods_randomuser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C550279081202E6BC5AC8520 /* Pods_randomuser.framework */; };
+		F1550F282A077FA6007672C1 /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1550F262A077FA6007672C1 /* LicenseViewController.swift */; };
+		F1550F292A077FA6007672C1 /* LicenseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1550F272A077FA6007672C1 /* LicenseViewController.xib */; };
 		F161C3D32A062BBE00EFA327 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F161C3D22A062BBE00EFA327 /* AppDelegate.swift */; };
 		F161C3D72A062BBE00EFA327 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F161C3D62A062BBE00EFA327 /* ViewController.swift */; };
 		F161C3DA2A062BBE00EFA327 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F161C3D82A062BBE00EFA327 /* Main.storyboard */; };
@@ -30,6 +32,8 @@
 		30602AFBD608BC37741CE503 /* Pods-randomuser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-randomuser.debug.xcconfig"; path = "Target Support Files/Pods-randomuser/Pods-randomuser.debug.xcconfig"; sourceTree = "<group>"; };
 		BB46754EEA1DCC2956680513 /* Pods-randomuser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-randomuser.release.xcconfig"; path = "Target Support Files/Pods-randomuser/Pods-randomuser.release.xcconfig"; sourceTree = "<group>"; };
 		C550279081202E6BC5AC8520 /* Pods_randomuser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_randomuser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1550F262A077FA6007672C1 /* LicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
+		F1550F272A077FA6007672C1 /* LicenseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LicenseViewController.xib; sourceTree = "<group>"; };
 		F161C3CF2A062BBE00EFA327 /* randomuser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = randomuser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F161C3D22A062BBE00EFA327 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F161C3D62A062BBE00EFA327 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +113,8 @@
 				F161C3DB2A062BBF00EFA327 /* Assets.xcassets */,
 				F161C3DD2A062BBF00EFA327 /* LaunchScreen.storyboard */,
 				F161C3E02A062BBF00EFA327 /* Info.plist */,
+				F1550F262A077FA6007672C1 /* LicenseViewController.swift */,
+				F1550F272A077FA6007672C1 /* LicenseViewController.xib */,
 			);
 			path = randomuser;
 			sourceTree = "<group>";
@@ -226,6 +232,7 @@
 				F161C3F72A063A9300EFA327 /* UserTableViewCell.xib in Resources */,
 				F161C3DF2A062BBF00EFA327 /* LaunchScreen.storyboard in Resources */,
 				F161C3DC2A062BBF00EFA327 /* Assets.xcassets in Resources */,
+				F1550F292A077FA6007672C1 /* LicenseViewController.xib in Resources */,
 				F161C3DA2A062BBE00EFA327 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +290,7 @@
 				F161C3F62A063A9300EFA327 /* UserTableViewCell.swift in Sources */,
 				F161C3D32A062BBE00EFA327 /* AppDelegate.swift in Sources */,
 				F161C3F32A06380F00EFA327 /* ErrorDto.swift in Sources */,
+				F1550F282A077FA6007672C1 /* LicenseViewController.swift in Sources */,
 				F161C4072A06498E00EFA327 /* ProfilePopup.swift in Sources */,
 				F161C3EF2A06366C00EFA327 /* NameDto.swift in Sources */,
 				F161C3ED2A0635E200EFA327 /* UserDto.swift in Sources */,

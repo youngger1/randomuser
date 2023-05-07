@@ -215,6 +215,16 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func btnLicensePressed(_ sender: Any) {
+        
+        let vc = LicenseViewController(nibName: "LicenseViewController", bundle: nil)
+        vc.modalPresentationStyle = .overFullScreen
+        
+        self.present(vc, animated: false)
+        
+    }
+    
+    
     // pull 업데이트
     @objc func pullToUpdate(_ sneder: Any) {
         
